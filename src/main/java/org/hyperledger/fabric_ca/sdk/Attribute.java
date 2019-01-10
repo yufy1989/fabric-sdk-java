@@ -20,6 +20,29 @@ import javax.json.JsonObjectBuilder;
 
 // An attribute name and value which is used when registering a new user
 public class Attribute {
+    //add by yfy 2019年1月10日22:36:02
+    // 当set了adminUserContext的HFCAClient调用register(RegistrationRequest request, User registrar)方法时，需要传入该对象，
+    // 该对象对应了users表中的attributes列，规定了若干属性如下所示
+    /**
+     * hf.Registrar.Roles : List     注册者可以管理的角色列表
+
+     hf.Registrar.DelegateRoles : List      注册者可以授予被注册身份hf.Registrar.Roles属性的角色列表
+
+     hf.Registrar.Attributes : List       注册者允许注册的属性列表
+
+     hf.GenCRL : Boolean   如果true则身份可以生成CRL
+
+     hf.Revoker : Boolean    如果true则身份可以撤销用户或证书
+
+     hf.AffiliationMgr : Boolean   如果true则身份可以管理组织关系
+
+     hf.IntermediateCA : Boolean     如果true则身份可以登记中间CA Server
+     ============================以上这些属性表示的是用户是否拥有相关的权限 =====================================================
+     hf.EnrollmentID ： 该用户名称
+     hf.Type ： 该用户类型
+     hf.Affiliation ： 该用户隶属于那个组织
+     */
+
     private final Boolean ecert;
     private String name;
     private String value;
